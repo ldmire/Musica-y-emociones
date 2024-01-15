@@ -1,0 +1,47 @@
+body{
+    background-color: #EEFEFF;
+    font-size: 17px;
+
+    margin-left: 20px;
+    margin-right:20px;
+    text-align: justify;
+    
+  }
+article{
+  text-align: center;
+}
+
+
+footer{
+  text-align: right;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: 19.5%;
+  margin-right: 0.625%;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+li:last-child a {
+  margin-right: 0;
+}
+
+a:link,
+a:visited,
+a:focus {
+  background:lightblue;
+}
+
+a:hover {
+  background: cadetblue;
+}
+
+a:active {
+  background: lightcyan;
+  color: white;
+}

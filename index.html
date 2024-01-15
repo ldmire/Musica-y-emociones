@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La música y las emociones</title>
+    <link rel="stylesheet" href="index.css" type="text/css"/>
+   <script type="text/JavaScript" src="localizacion.js"></script>
+ 
+   <script>
+    /** @type {HTMLElement}*/
+    var posElt;
+    /** @type {HTMLElement} */
+    var posLinkElt;
+
+
+    window.addEventListener('load', function(){
+        posElt = document.getElementById('Pos');
+        posLinkElt = document.querySelector('#PosLink > a');
+
+        // if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(geoposOK, geoposKO);
+        // }
+        // else {
+        // }
+    });
+
+    /** @param {GeolocationPosition} pos */
+    function geoposOK(pos) {
+        //Obtenemos latitud y longitud
+        var lat = pos.coords.latitude;
+        var long = pos.coords.longitude;
+        //Mostramos la posición
+        posElt.textContent = `${lat}, ${long}`;
+        //generamos enlace a la posición
+        posLinkElt.href = `https://maps.google.com/?q=${lat},${long}`;
+        posLinkElt.textContent = 'Mostrar tu posición en un mapa';
+    }
+
+    /** @param {GeolocationPositionError} err */
+    function geoposKO(err) {
+        console.warn(err.message);
+        let msg;
+        switch(err.code) {
+            case err.PERMISSION_DENIED:
+                msg = "No nos has dado permiso para obtener tu posición";
+                break;
+            case err.POSITION_UNAVAILABLE:
+                msg = "Tu posición actual no está disponible";
+                break;
+             case err.TIMEOUT:
+                 msg = "No se ha podido obtener tu posición en un tiempo prudencial";
+                 break;
+             default:
+                 msg = "Error desconocido";
+                 break;
+        }
+        posElt.textContent = msg;
+    }
+</script>
+</head>
+<body>
+
+  
+
+    <div><header> 
+        <h1>La música y las emociones</h1> 
+    </header></div>
+
+    
+
+<div><topnav>
+    <div><a href="#musicayemociones">1.La relación de la música y las emociones </a>
+        </div>
+    <div><a href="#cerebro">2.¿Qué pasa en el cerebro cuando escuchamos música?</a>
+        </div>
+    <div><a href="#sentimientos">3.¿Cómo la música influye en nuestros sentimientos?</a>
+        </div>
+    <div><a href="#ejemplos">3.1.Ejemplos</a>
+        </div>
+    <div><a href="#clasica">3.2.Efectos de la música clásica</a>
+        </div>
+    <div><a href="#Musicoterapia">3.3.Musicoterapia</a>
+        </div>
+    <div><a href="#inteligencia">4.Inteligencia emocional</a>
+        </div>
+    <div><a href="#Bibliografía">Bibliografía</a>
+        </div>
+</topnav></div><br><br>
+
+<br><br><br>
+<div><article><h2><div id="musicayemociones"><strong>La relación de la música y las emociones</strong></div></h2>
+
+<p>La presencia de la música en nuestras vidas comienza prácticamente desde el nacimiento, cuando empezamos a percibir 
+    las voces de quienes nos rodean como una melodía. Además, la música guarda una estrecha relación con la inteligencia 
+    emocional, facilitándonos el desarrollo de habilidades como la empatía, permitiéndonos poner en perspectiva las experiencias 
+    de los demás.</p>
+
+<p>El impacto de la música en nuestros procesos mentales, percepciones y sensaciones puede influir en el comportamiento humano. 
+    La psicología de la música se dedica al estudio de esta conexión, explorando cómo la música afecta nuestro cerebro.</p>
+
+
+</article></div>
+
+<div><article><h2><div id="cerebro"><strong>¿Qué pasa en el cerebro cuando escuchamos música?</strong></div></h2>
+
+<p>Una de las razones fundamentales por las cuales la música puede impactar nuestras emociones radica en su capacidad para activar 
+    el sistema de recompensa cerebral. En otras palabras, escuchar música libera neurotransmisores como la dopamina, asociada al 
+    placer y la felicidad, explicando así por qué la música tiene el poder de elevar nuestro ánimo en momentos de depresión.</p>
+    
+<p>Diversos estudios se han enfocado en demostrar cómo la música estimula ambos hemisferios cerebrales. La profesora Elizabeth 
+    Hellmuth Margulis, del Laboratorio de Cognición de Música de la Universidad de Princeton, ha llevado a cabo investigaciones 
+    que exploran la influencia de la música en la ciencia cognitiva. Según sus hallazgos, la mayoría de la música que escuchamos 
+    se compone de melodías que ya conocemos, y esa familiaridad es lo que genera en las personas una sensación de alegría y 
+    tranquilidad.</p>
+
+</article></div>
+
+<div><article><h2><div id="sentimientos"><strong>¿Cómo la música influye en nuestros sentimientos?</strong></div></h2>
+
+<ul><li>
+    La música tiene la capacidad de influir en nuestras emociones al evocar recuerdos. Por ejemplo, al escuchar una canción 
+    que solías oír durante tus días de instituto, es posible que se desencadenen recuerdos de esa época, acompañados de las 
+    emociones asociadas a esos momentos.</li>
+
+<li>De manera similar, la música vinculada a un lugar o evento específico puede evocar recuerdos y desencadenar emociones 
+    relacionadas con esa experiencia. Por ejemplo, escuchar una canción que nos transporte a unas vacaciones de verano. 
+    Por esta razón, la música se emplea con frecuencia como una expresión de nostalgia, ya que tiene la capacidad de traer 
+    a la memoria recuerdos de momentos felices y facilitarnos la oportunidad de revivir esas sensaciones.</li>
+
+<li>Las letras de una canción también poseen un impacto significativo en nuestras emociones. Las palabras que expresan amor, 
+    tristeza o rabia tienen el poder de resonar en los oyentes, desencadenando diversas emociones en respuesta.</li>
+
+<li>Asimismo, la melodía y la armonía de una canción desempeñan un papel fundamental en su impacto emocional. Una melodía lenta 
+    puede evocar sentimientos de tristeza, mientras que una melodía rápida y alegre tiene el poder de crear una sensación de 
+    emoción.</li>
+
+<li>Igualmente, las experiencias personales de un individuo y sus conexiones con una canción o género específico también pueden 
+    tener un impacto significativo en su carga emocional. Por ejemplo, alguien que ha atravesado numerosos desengaños amorosos 
+    podría experimentar sentimientos de tristeza y nostalgia al escuchar ciertas canciones, mientras que otra persona que ha vivido 
+    experiencias románticas más positivas podría encontrar esas mismas canciones edificantes y alegres.</li>
+
+</ul><p>A parte de estos elementos, la manera en que se interpreta la música también puede influir en su impacto emocional. La 
+    interpretación en vivo de una canción difiere notablemente de una versión grabada. La ejecución en directo puede poseer una 
+    mayor intensidad emocional, ya que facilita una conexión más directa tanto con el intérprete como con la esencia misma de la 
+    música.</p>
+</article></div>
+
+
+<div><article><h3><div id="ejemplos"><strong>Ejemplos</strong></div></h3>
+    <p>Aquí te dejo algunos ejemplos de listas de música que nos pueden provocar sentimientos</p>
+    <p>Haz click en las imagenes para descubrirlas</p>
+
+
+    <a href="https://youtu.be/I9frjnJEMgM?feature=shared" title="Canciones alegres" target="_blank">
+        <img
+        src="imagenes/feliz.png"
+        alt="Canciones felices"
+        width="150"
+        height="150" />
+    </a>
+
+    <a href="https://youtu.be/fUvHgHrBASo?feature=shared" title="Canciones tristes" target="_blank">
+        <img
+        src="imagenes/triste.png"
+        alt="Canciones tristes"
+        width="150"
+        height="150" />
+    </a>
+
+    <a href="https://youtu.be/PSV63X-dGS4?feature=shared" title="Canciones relajantes" target="_blank">
+        <img
+        src="imagenes/relax.jpg"
+        alt="Canciones relajantes"
+        width="150"
+        height="150" />
+    </a>
+   
+
+
+<div><article><h3><div id="clasica"><strong>Efectos de la música clásica</strong></div></h3>
+<p>Es una creencia arraigada que la música clásica, especialmente la de Mozart, tiene efectos beneficiosos en las personas, 
+    especialmente en los bebés. Esta percepción se fundamenta en estudios realizados en los años 90 en Estados Unidos, los 
+    cuales indicaron que la música clásica, incluyendo la de Mozart, podría tener efectos positivos en los bebés, incluso desde 
+    el útero materno, conocido como el "efecto Mozart".</p>
+
+</article></div>
+
+<div><article><h3><div id="Musicoterapia"><strong>Musicoterapia</strong></div></h3>
+<p>
+    Como se ha detallado a lo largo del artículo, queda claro que la música ejerce una influencia significativa en nuestras emociones. 
+    Precisamente debido a este impacto, la música se ha empleado como una forma de terapia.</p>
+<p>La musicoterapia implica la utilización de la música y sus diversos elementos con el objetivo de mejorar y obtener beneficios a nivel
+     cognitivo, físico y socioemocional. <br>
+     <br>
+     <a href="web2Irene.html" target="_blank">Haz click en este link para descubrir más</a></p>
+</article></div>
+
+<div><aside><h3>"LAS EMOCIONES Y LA MUSICA" de Mª Soledad Cabrelles Sagredo </h3>
+<h4>Resumen</h4>
+<p>El texto aborda el desarrollo histórico del concepto de emociones, señalando su ausencia como categoría conceptual hasta el 
+    siglo XIX. Se destaca la influencia negativa que el racionalismo tenía sobre la percepción de las emociones hasta la segunda 
+    mitad del siglo XX. Charles Darwin contribuyó al estudio de las expresiones emocionales desde una perspectiva evolutiva.
+    A partir de 1800, hubo un cambio en el vocabulario que reemplazó términos como "pasiones" por "emociones". La psicología 
+    inglesa experimentó una secularización, transformando las nociones de esperanza, miedo, amor, etc. El autor destaca la 
+    diversidad de opiniones sobre las emociones, desde definiciones centradas en respuestas fisiológicas hasta enfoques que 
+    consideran los sentimientos y pensamientos.</p>
+<p>Se mencionan las discrepancias entre expertos sobre qué emociones son primarias y si realmente existen. 
+    Se discute la propuesta de Ekman sobre emociones centrales, pero se sugiere que es más útil pensar en términos de 
+    familias o dimensiones emocionales. Antonio Damasio diferencia entre emociones primarias y secundarias, enfatizando 
+    las diferencias en el procesamiento cerebral.</p>
+<p>Finalmente, se presenta una definición de emoción como la combinación de un proceso evaluador mental con respuestas 
+    disposicionales que afectan al cuerpo y al cerebro, según la perspectiva de Damasio.</p>
+
+    <br><br><br>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-f02bc5da-e88d-4c1c-b20b-d13d5b38ebcd" data-elfsight-app-lazy></div>
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <div class="elfsight-app-37397c8d-9e56-4a8a-9583-d13d1905f5c8" data-elfsight-app-lazy></div>
+    
+</aside></div>
+
+<div><article><h2><div id="inteligencia"><strong>La inteligencia emocional</strong></div></h2>
+    <p>El concepto de inteligencia emocional surge con posterioridad al de inteligencia que Wechsler, D. (1958) propuso de la 
+    siguiente manera:
+    “capacidad global del individuo para actuar con propósito, pensar racionalmente y manejar efectivamente su ambiente”.
+    Interesado en medir la inteligencia, ideó un índice llamado Cociente de Inteligencia (CI), que evaluaba habilidades cognitivas 
+    como análisis, comprensión, retención y resolución de problemas. Sin embargo, reconoció que la inteligencia abarca también 
+    competencias no cognitivas vinculadas al desarrollo socioemocional. Así, el CI se percibe como solo una fracción de los factores
+     que determinan el éxito, entendido como la posición social, mientras que otros elementos como la clase social, la suerte y la 
+     inteligencia emocional desempeñan roles significativos. En su momento, Howard Gardner (1983–2001) revolucionó la noción de 
+     inteligencia al introducir la teoría de inteligencias múltiples, que considera el potencial bio-psico-social. Inicialmente, 
+     identificó siete tipos de inteligencia, a los cuales más tarde añadió otros cuatro.<br>
+    <br>
+    <a href="web1Irene.html" target="_blank">Haz click aquí para saber cuales son</a>
+    </p>
+    </article></div>
+
+
+<div><article><h2><div id="Bibliografía"><strong>Bibliografía</strong></div></h2>
+<p>Información obtenida de:<br></p>
+<div><biblio id=#enlaces>
+    <ul>
+<li><p><a href="https://gorgoritos.com/relacion-entre-la-musica-y-las-emociones/" target="_blank">Gorgoritos</a></p></li>
+
+<li><p><a href="https://gorgoritos.com/que-es-y-para-que-sirve-la-musicoterapia/" target="_blank">Gorgoritos</a></p></li>
+
+<li><p><a href="https://www.cervantesvirtual.com/obra-visor/las-emociones-y-la-musica/html/" target="_blank">Biblioteca Miguel de Cervantes</a></p></li>
+
+<li><p><a href="https://universodeemociones.com/relacion-musica-emociones/" target="_blank">Universo de emociones</a></p></li>
+
+<li><p><a href="https://lamenteesmaravillosa.com/musica-y-emociones/" target="_blank">La mente es maravillosa</a></p></li>
+
+<li><p>Todas las imágenes obtenidas de <a href="https://pixabay.com/es/" target="_blank">Pixabay</a></p></li>
+</ul>
+</biblio></div>
+
+</article></div>
+
+
+<div><footer>
+
+    <br><br>
+<p>Tu posicion es: <span id="Pos"> Desconocida</span> </p>
+<p id="PosLink"><a target="_blank"></a></p>
+
+	<div><a href="#arriba">Volver arriba</a></div>
+</footer></div>
+<br><br>
+
+  <h1>Comentarios</h1>
+
+  <div id="comment-container"></div>
+
+  <form id="comment-form">
+    <label for="username">Nombre:</label>
+    <input type="text" id="username" required>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" required></textarea>
+
+    <button type="button" onclick="addComment()">Agregar Comentario</button>
+  </form>
+
+
+</body>
+</html>
